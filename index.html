@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1,user-scalable=no">
+<title>Lean Trainer — Jadwal Lean Senin–Kamis</title>
+<meta name="description" content="Aplikasi latihan offline: jadwal upper-body aesthetic Senin–Kamis, log set, timer istirahat, dan tracking volume mingguan.">
+<meta name="theme-color" content="#080b12">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Lean Trainer">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon-192.png" type="image/png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="hdr">
+  <div class="hdr-row">
+    <div class="brand">
+      <div class="brand-ic">🏋️</div>
+      <div>
+        <div class="brand-t">LEAN TRAINER</div>
+        <div class="brand-s" id="hdrName">Siap latihan?</div>
+      </div>
+    </div>
+    <div class="hdr-date" id="hdrDate"></div>
+  </div>
+</header>
+
+<main id="app">
+  <div id="view"></div>
+</main>
+
+<nav class="nav">
+  <div class="nav-in">
+    <button class="navb" data-tab="schedule"><span class="ni">📅</span>Jadwal</button>
+    <button class="navb" data-tab="workout"><span class="ni">🏋️</span>Latihan</button>
+    <button class="navb" data-tab="progress"><span class="ni">📈</span>Progress</button>
+    <button class="navb" data-tab="settings"><span class="ni">⚙️</span>Setelan</button>
+  </div>
+</nav>
+
+<!-- Rest timer overlay -->
+<div class="ovl" id="timer">
+  <div class="t-lab" id="tSub">Istirahat</div>
+  <div class="t-ring">
+    <svg width="230" height="230">
+      <circle cx="115" cy="115" r="104" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="10"/>
+      <circle id="tRingFg" cx="115" cy="115" r="104" fill="none" stroke="#ff7a45" stroke-width="10" stroke-linecap="round"/>
+    </svg>
+    <div>
+      <div class="t-big" id="tNum">01:30</div>
+      <div class="t-name" id="tName"></div>
+    </div>
+  </div>
+  <div class="t-btns">
+    <button class="btn ghost" id="tMinus">−15s</button>
+    <button class="btn" id="tSkip">Lewati</button>
+    <button class="btn ghost" id="tPlus">+15s</button>
+  </div>
+  <div class="t-btns">
+    <button class="btn ghost" id="tAgain" style="display:none">🔁 Ulangi</button>
+    <button class="btn" id="tDone" style="display:none">💪 Lanjut set</button>
+  </div>
+</div>
+
+<div id="toast" class="toast"></div>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
